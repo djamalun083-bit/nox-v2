@@ -1,17 +1,15 @@
 export const config = {
   api: {
-    bodyParser: true,
-  },
+    externalResolver: true
+  }
 };
 
 export default function handler(req, res) {
   if (req.method !== "POST") {
-    return res.status(200).json({ image: "" });
+    return res.end();
   }
 
-  const { prompt } = req.body || {};
-
-  return res.status(200).json({
+  res.status(200).json({
     image: "https://via.placeholder.com/512?text=NOX+AI"
   });
 }
