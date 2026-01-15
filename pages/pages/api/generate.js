@@ -1,15 +1,4 @@
-export const config = {
-  api: {
-    externalResolver: true
-  }
+module.exports = {
+  reactStrictMode: false,
+  output: undefined
 };
-
-export default function handler(req, res) {
-  if (req.method !== "POST") {
-    return res.end();
-  }
-
-  res.status(200).json({
-    image: "https://via.placeholder.com/512?text=NOX+AI"
-  });
-}
